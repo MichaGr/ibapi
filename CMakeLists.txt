@@ -11,5 +11,7 @@ ${CMAKE_SOURCE_DIR}/include/View
 ${CMAKE_SOURCE_DIR}/include/IbHandle
 )
 
+add_subdirectory(external)
 add_subdirectory(source)
+
 
