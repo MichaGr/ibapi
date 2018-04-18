@@ -9,6 +9,7 @@ ${CMAKE_SOURCE_DIR}/external/twsapi
 ${CMAKE_SOURCE_DIR}/external/qcustomplot
 ${CMAKE_SOURCE_DIR}/include/View
 ${CMAKE_SOURCE_DIR}/include/IbHandle
+${CMAKE_SOURCE_DIR}/include/Utils
 )
 
 add_subdirectory(external)
