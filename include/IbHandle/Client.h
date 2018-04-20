@@ -13,6 +13,9 @@ public:
     Client();
     ~Client();
 
+    bool connect(const char *host, unsigned int port, int clientId);
+    void disconnect() const;
+
 
 //-----VIRTUAL OVERWRITTEN FUNCTIONS--------------------------------------------
 public:

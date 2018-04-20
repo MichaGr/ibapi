@@ -19,6 +19,8 @@ public:
     Q_INVOKABLE void removeSelectedGraph();
     Q_INVOKABLE void horzScrollBarChanged(int value);
     Q_INVOKABLE void vertScrollBarChanged(int value);
+    Q_INVOKABLE void startIBGateway(QString user,
+                                    QString password);
 
 signals:
     void rightClicked(unsigned int x,unsigned int y);

@@ -7,9 +7,13 @@ set(CMAKE_CXX_STANDARD 11)
 include_directories(
 ${CMAKE_SOURCE_DIR}/external/twsapi
 ${CMAKE_SOURCE_DIR}/external/qcustomplot
+${CMAKE_SOURCE_DIR}/include/App
 ${CMAKE_SOURCE_DIR}/include/View
 ${CMAKE_SOURCE_DIR}/include/IbHandle
 ${CMAKE_SOURCE_DIR}/include/Utils
+${CMAKE_SOURCE_DIR}/include/Model
+${CMAKE_SOURCE_DIR}/include/Controller
+
 )
 
 add_subdirectory(external)

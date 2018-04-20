@@ -1,3 +1,6 @@
 add_subdirectory(View)
 add_subdirectory(IbHandle)
 add_subdirectory(Utils)
+add_subdirectory(Model)
+add_subdirectory(Controller)
+add_subdirectory(App)

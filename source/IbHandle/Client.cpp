@@ -1,5 +1,6 @@
 #include "Client.h"
 #include <iostream>
+#include <cstdio>
 
 Client::Client() :
     m_osSignal(2000),
@@ -17,6 +18,45 @@ Client::~Client()
     }
 
     delete m_clientSocket;
+}
+
+//------------------------------------------------------------------------------
+
+bool Client::connect(const char *host, unsigned int port, int clientId)
+{
+    // trying to connect
+    printf( "Connecting to %s:%d clientId:%d\n", !( host && *host) ? "127.0.0.1" : host, port, clientId);
+
+    //! [connect]
+    bool bRes = m_clientSocket->eConnect( host, port, clientId);
+    //! [connect]
+
+    if (bRes) {
+        printf( "Connected to %s:%d clientId:%d\n",
+                m_clientSocket->host().c_str(),
+                m_clientSocket->port(),
+                clientId);
+        //! [ereader]
+        m_reader = new EReader(m_clientSocket, &m_osSignal);
+        m_reader->start();
+        //! [ereader]
+    }
+    else
+        printf( "Cannot connect to %s:%d clientId:%d\n",
+                m_clientSocket->host().c_str(),
+                m_clientSocket->port(),
+                clientId);
+
+    return bRes;
+}
+
+//------------------------------------------------------------------------------
+
+void Client::disconnect() const
+{
+    m_clientSocket->eDisconnect();
+
+    printf ( "Disconnected\n");
 }
 
 //------------------------------------------------------------------------------

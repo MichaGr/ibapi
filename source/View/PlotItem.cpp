@@ -1,6 +1,7 @@
 #include "PlotItem.h"
 #include "qcustomplot.h"
 #include <QDebug>
+#include <stdlib.h>
 
 PlotItem::PlotItem( QQuickItem* parent ) : QQuickPaintedItem( parent )
     , m_customPlot( nullptr ), m_timerId( 0 )
@@ -214,4 +215,15 @@ void PlotItem::vertScrollBarChanged(int value)
         m_customPlot->yAxis->setRange(m_customPlot->yAxis->range().center(),5.0 * exp(value/10.0),Qt::AlignCenter);
         m_customPlot->replot();
     }
+}
+
+void PlotItem::startIBGateway(QString user, QString password)
+{
+    std::string command = "/home/michael/Jts/ibgateway/970/ibgateway username=" +
+            user.toStdString() +
+            " password=" +
+            password.toStdString() +
+            " &";
+
+    system(command.c_str());
 }
