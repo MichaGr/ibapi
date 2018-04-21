@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>Plotter.qml</file>
         <file>LoginWindow.qml</file>
+        <file>TileView.qml</file>
     </qresource>
 </RCC>

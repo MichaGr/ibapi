@@ -9,6 +9,8 @@ qt5_add_resources(UI_RESOURCES ${CMAKE_SOURCE_DIR}/resources/qml.qrc)
 add_executable(Unittest_View    unittest_view.cpp
                                 ${CMAKE_SOURCE_DIR}/external/qcustomplot/qcustomplot.h
                                 ${CMAKE_SOURCE_DIR}/external/qcustomplot/qcustomplot.cpp
+                                ${CMAKE_SOURCE_DIR}/include/View/View.h
+                                ${CMAKE_SOURCE_DIR}/source/View/View.cpp
                                 ${CMAKE_SOURCE_DIR}/include/View/PlotItem.h
                                 ${CMAKE_SOURCE_DIR}/source/View/PlotItem.cpp
                                 ${CMAKE_SOURCE_DIR}/include/View/Plottables/PlottableItem.h

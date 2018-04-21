@@ -26,10 +26,6 @@ Dialog {
         }
     }
 
-    Keys.onReturnPressed: {
-        accept()
-    }
-
     onAccepted: {
         login(userField.text, passwordField.text)
     }

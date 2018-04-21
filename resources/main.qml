@@ -1,6 +1,7 @@
 import QtQuick 2.9
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.2
+import QtGraphicalEffects 1.0
 
 import Plot 1.0
 
@@ -13,6 +14,13 @@ Window {
 
     Component.onCompleted: loginWindow.open()
 
+    Rectangle {
+        id: background
+
+        anchors.fill: parent
+
+        color: "#343434"
+    }
 
     LoginWindow {
         id: loginWindow
@@ -20,21 +28,24 @@ Window {
         y: (window.height - height) / 2
         parent: ApplicationWindow.overlay
         onLogin: {
-            plotter.startIBGateway(user,password)
+            //plotter.startIBGateway(user,password)
             softwareSuite.visible = true
         }
 
         onRejected: {
             window.close()
         }
+
     }
+
+
 
     Item {
         id: softwareSuite
         visible: false
         anchors.fill: parent
-        Plotter {
-            id:plotter
+        TileView {
+            id: tileView
             anchors.fill: parent
         }
     }
